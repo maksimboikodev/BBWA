@@ -2,6 +2,7 @@ package render
 
 import (
 	"BBWA/pkg/config"
+	"BBWA/pkg/models"
 	"bytes"
 	"fmt"
 	"html/template"
@@ -19,7 +20,11 @@ func NewTemplates(a *config.AppConfig) {
 	a = app
 }
 
-func RenderTemplate(w http.ResponseWriter, tmpl string) {
+func AddDefaultData(td *models.TemplateData) *models.TemplateData {
+	return td
+}
+
+func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	//get the template cash from the app config
 	var tc map[string]*template.Template
 
@@ -34,8 +39,8 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
 		log.Fatal("Could not get template from template cache")
 	}
 	buf := new(bytes.Buffer)
-
-	_ = t.Execute(buf, nil)
+	td = AddDefaultData(td)
+	_ = t.Execute(buf, td)
 
 	_, err := buf.WriteTo(w)
 
