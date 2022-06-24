@@ -15,12 +15,12 @@ const portNumber = ":8080"
 func main() {
 	var app config.AppConfig
 
-	tc, err := rander.CreateTemplateCash()
+	tc, err := rander.CreateTemplateCache()
 	if err != nil {
 		log.Fatal("cannot create template cash")
 	}
 
-	app.TemplateCash = tc
+	app.TemplateCache = tc
 
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/about", handlers.About)
