@@ -12,6 +12,7 @@ import (
 var functions = template.FuncMap{}
 
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
+	//get the template cash from the app config
 	tc, err := CreateTemplateCash()
 	if err != nil {
 		log.Fatal(err)
