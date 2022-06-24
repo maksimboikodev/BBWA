@@ -17,7 +17,7 @@ var app *config.AppConfig
 
 // Sets the config for the template package
 func NewTemplates(a *config.AppConfig) {
-	a = app
+	app = a
 }
 
 func AddDefaultData(td *models.TemplateData) *models.TemplateData {
