@@ -1,8 +1,8 @@
 package render
 
 import (
-	"BBWA/pkg/config"
-	"BBWA/pkg/models"
+	"BBWA/internal/config"
+	"BBWA/internal/models"
 	"bytes"
 	"fmt"
 	"github.com/justinas/nosurf"

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"BBWA/pkg/config"
-	"BBWA/pkg/handlers"
-	"BBWA/pkg/render"
+	"BBWA/internal/config"
+	"BBWA/internal/handlers"
+	"BBWA/internal/render"
 	"fmt"
 	"github.com/alexedwards/scs/v2"
 	"log"
