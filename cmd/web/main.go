@@ -3,7 +3,9 @@ package main
 import (
 	"BBWA/internal/config"
 	"BBWA/internal/handlers"
+	"BBWA/internal/models"
 	"BBWA/internal/render"
+	"encoding/gob"
 	"fmt"
 	"github.com/alexedwards/scs/v2"
 	"log"
@@ -18,6 +20,8 @@ var session *scs.SessionManager
 
 //main is the main application func
 func main() {
+	//what am I going to put in the session
+	gob.Register(models.Reservation{})
 
 	//Change this to true when in production
 	app.InProduction = false
